@@ -41,6 +41,35 @@ REPORTS_DIR = os.path.join(os.path.dirname(__file__), "..", "reports")
 WEB_DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "web", "data")
 
 
+def _find_snapshot_n_days_ago(snapshots, full_name, days=7):
+    """在历史快照中查找最接近 N 天前的一条快照。
+
+    Args:
+        snapshots: 所有历史快照列表
+        full_name: 仓库全名，如 "owner/repo"
+        days: 目标天数，默认 7
+
+    Returns:
+        最接近目标日期的快照 dict，未找到时返回 None
+    """
+    from datetime import timedelta
+
+    target = datetime.now(timezone.utc) - timedelta(days=days)
+    best = None
+    best_diff = None
+    for s in snapshots:
+        if s.get("repo") == full_name:
+            try:
+                st = datetime.fromisoformat(s["time"])
+                diff = abs((st - target).total_seconds())
+                if best_diff is None or diff < best_diff:
+                    best = s
+                    best_diff = diff
+            except (ValueError, KeyError):
+                continue
+    return best
+
+
 def do_fetch(config):
     """阶段一：抓取仓库数据并评分"""
     print("=" * 50)
@@ -73,99 +102,110 @@ def do_fetch(config):
 
     for i, repo in enumerate(repos, 1):
         full_name = repo.full_name
-        print(f"  [{i}/{len(repos)}] {full_name} ", end="", flush=True)
+        try:
+            print(f"  [{i}/{len(repos)}] {full_name} ", end="", flush=True)
 
-        details = fetcher.get_repo_details(full_name)
-        contributors_30d = fetcher.get_contributors_count(full_name)
-        readme_score = compute_readme_score(details["readme_text"])
+            details = fetcher.get_repo_details(full_name)
+            contributors_30d = fetcher.get_contributors_count(full_name)
+            readme_score = compute_readme_score(details["readme_text"])
 
-        # 更新 profiles
-        tracked[full_name] = {
-            "full_name": full_name,
-            "stars": details["stars"],
-            "forks": details["forks"],
-            "language": details["language"],
-            "description": details["description"],
-            "topics": details["topics"],
-            "created_at": details["created_at"],
-            "license": details["license"],
-            "owner_type": details["owner_type"],
-            "last_fetched": datetime.now(timezone.utc).isoformat(),
-        }
+            # 更新 profiles
+            tracked[full_name] = {
+                "full_name": full_name,
+                "stars": details["stars"],
+                "forks": details["forks"],
+                "language": details["language"],
+                "description": details["description"],
+                "topics": details["topics"],
+                "created_at": details["created_at"],
+                "license": details["license"],
+                "owner_type": details["owner_type"],
+                "last_fetched": datetime.now(timezone.utc).isoformat(),
+                "contributors_30d": contributors_30d,
+                "open_issues": details["open_issues"],
+            }
 
-        # 找上一次快照（倒序搜索最近一条）
-        prev = None
-        for s in reversed(prev_snapshots):
-            if s.get("repo") == full_name:
-                prev = s
-                break
+            # 找上一次快照（倒序搜索最近一条）
+            prev = None
+            for s in reversed(prev_snapshots):
+                if s.get("repo") == full_name:
+                    prev = s
+                    break
 
-        prev_stars = prev["stars"] if prev else repo.stargazers_count
-        star_delta_1d = repo.stargazers_count - prev_stars
-        star_delta_7d = repo.stargazers_count - prev_stars
+            prev_7d = _find_snapshot_n_days_ago(prev_snapshots, full_name, days=7)
 
-        star_acceleration = 0.0
-        if prev and prev.get("star_delta_7d", 0) > 0:
-            star_acceleration = star_delta_7d / max(prev["star_delta_7d"], 1)
+            prev_stars = prev["stars"] if prev else repo.stargazers_count
+            star_delta_1d = repo.stargazers_count - prev_stars
+            star_delta_7d = repo.stargazers_count - (prev_7d["stars"] if prev_7d else prev_stars)
 
-        now_iso = datetime.now(timezone.utc).isoformat()
+            prev_forks = prev["forks"] if prev else details["forks"]
+            fork_delta_1d = details["forks"] - prev_forks
 
-        snapshot = {
-            "repo": full_name,
-            "time": now_iso,
-            "stars": repo.stargazers_count,
-            "star_delta_1d": star_delta_1d,
-            "star_delta_7d": star_delta_7d,
-            "star_acceleration": star_acceleration,
-            "forks": details["forks"],
-            "fork_delta_1d": 0,
-            "open_issues": details["open_issues"],
-            "contributors_30d": contributors_30d,
-            "issue_response_h": 24.0,
-            "pr_merge_rate": 0.85,
-            # 评分依赖字段
-            "full_name": full_name,
-            "created_at": details["created_at"],
-            "topics": details["topics"],
-            "owner_type": details["owner_type"],
-            "license": details["license"],
-            "readme_score": readme_score,
-        }
+            star_acceleration = 0.0
+            if prev_7d and prev_7d.get("star_delta_7d", 0) > 0:
+                star_acceleration = star_delta_7d / max(prev_7d["star_delta_7d"], 1)
 
-        # 五维度评分
-        dimensions = {
-            "growth": score_growth(snapshot, prev),
-            "novelty": score_novelty(snapshot, all_topics),
-            "community": score_community(snapshot),
-            "authority": score_authority(snapshot, config),
-            "quality": score_quality(snapshot),
-        }
-        composite = compute_composite(dimensions)
-        labels = compute_labels(dimensions, snapshot)
+            now_iso = datetime.now(timezone.utc).isoformat()
 
-        snapshot["score"] = composite
-        snapshot["labels"] = labels
+            snapshot = {
+                "repo": full_name,
+                "time": now_iso,
+                "stars": repo.stargazers_count,
+                "star_delta_1d": star_delta_1d,
+                "star_delta_7d": star_delta_7d,
+                "star_acceleration": star_acceleration,
+                "forks": details["forks"],
+                "fork_delta_1d": fork_delta_1d,
+                "open_issues": details["open_issues"],
+                "contributors_30d": contributors_30d,
+                "issue_response_h": 24.0,
+                "pr_merge_rate": 0.85,
+                # 评分依赖字段
+                "full_name": full_name,
+                "created_at": details["created_at"],
+                "topics": details["topics"],
+                "owner_type": details["owner_type"],
+                "license": details["license"],
+                "readme_score": readme_score,
+            }
 
-        append_snapshot(SNAPSHOTS_PATH, snapshot)
+            # 五维度评分
+            dimensions = {
+                "growth": score_growth(snapshot, prev),
+                "novelty": score_novelty(snapshot, all_topics),
+                "community": score_community(snapshot),
+                "authority": score_authority(snapshot, config),
+                "quality": score_quality(snapshot),
+            }
+            composite = compute_composite(dimensions)
+            labels = compute_labels(dimensions, snapshot)
 
-        one_liner = generate_one_liner({
-            "repo": full_name,
-            "star_delta_7d": star_delta_7d,
-            "description": details["description"],
-        })
+            snapshot["score"] = composite
+            snapshot["labels"] = labels
 
-        candidates.append({
-            "rank": 0,
-            "repo": full_name,
-            "stars": repo.stargazers_count,
-            "star_delta_1d": star_delta_1d,
-            "star_delta_7d": star_delta_7d,
-            "score": composite,
-            "labels": labels,
-            "one_liner": one_liner,
-        })
+            append_snapshot(SNAPSHOTS_PATH, snapshot)
 
-        print(f"→ 综合 {composite:.1f} 分, {' '.join(labels) if labels else '未分类'}")
+            one_liner = generate_one_liner({
+                "repo": full_name,
+                "star_delta_7d": star_delta_7d,
+                "description": details["description"],
+            })
+
+            candidates.append({
+                "rank": 0,
+                "repo": full_name,
+                "stars": repo.stargazers_count,
+                "star_delta_1d": star_delta_1d,
+                "star_delta_7d": star_delta_7d,
+                "score": composite,
+                "labels": labels,
+                "one_liner": one_liner,
+            })
+
+            print(f"→ 综合 {composite:.1f} 分, {' '.join(labels) if labels else '未分类'}")
+
+        except Exception as e:
+            print(f"→ ⚠️ 失败: {e}")
 
     # 按分数降序排序
     candidates.sort(key=lambda x: x["score"], reverse=True)
@@ -182,8 +222,8 @@ def do_fetch(config):
         d = dict(c)
         d["readme_summary"] = (p.get("description", "") or "")[:200]
         d["community"] = {
-            "contributors_30d": c.get("stars", 0),
-            "open_issues": 0,
+            "contributors_30d": p.get("contributors_30d", 0),
+            "open_issues": p.get("open_issues", 0),
         }
         d["risk_note"] = ""
         details.append(d)
