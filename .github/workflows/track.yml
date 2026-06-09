@@ -50,10 +50,13 @@ jobs:
       - name: Run tracker
         run: python src/main.py --fetch
 
+      - name: Generate web panel data
+        run: python src/main.py --report
+
       - name: Commit and push data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/
+          git add data/ web/data/
           git diff --staged --quiet || git commit -m "data: auto snapshot $(date -Iminutes)"
           git push
