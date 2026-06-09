@@ -1,4 +1,3 @@
-import os
 from datetime import datetime, timezone, timedelta
 from github import Github
 
@@ -43,7 +42,7 @@ class GitHubFetcher:
         }
 
     def get_contributors_count(self, full_name):
-        """获取近 30 天贡献者数量（估算）"""
+        """获取全时段贡献者数量（估算，上限 100 人）"""
         repo = self.client.get_repo(full_name)
         try:
             contributors = repo.get_contributors()
