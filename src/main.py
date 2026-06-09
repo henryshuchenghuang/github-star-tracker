@@ -38,7 +38,7 @@ SNAPSHOTS_PATH = os.path.join(DATA_DIR, "snapshots.jsonl")
 PROFILES_PATH = os.path.join(DATA_DIR, "profiles.json")
 CANDIDATES_PATH = os.path.join(DATA_DIR, "candidates.json")
 REPORTS_DIR = os.path.join(os.path.dirname(__file__), "..", "reports")
-WEB_DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "web", "data")
+WEB_DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "docs", "data")
 
 
 def _find_snapshot_n_days_ago(snapshots, full_name, days=7):
