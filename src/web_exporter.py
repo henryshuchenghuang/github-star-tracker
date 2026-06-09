@@ -95,3 +95,31 @@ def export_archive(panel_data, web_data_dir):
 def _validate_date_str(s):
     if any(sep in s for sep in ("/", "\\", "..")):
         raise ValueError(f"Invalid date format: {s}")
+
+
+def update_archive_index(web_data_dir):
+    """扫描 archive 目录，更新 archive/index.json 索引文件。
+
+    GitHub Pages 不支持目录列表，前端需要这个索引来知道有哪些历史日期可用。
+    """
+    import glob
+
+    archive_dir = os.path.join(web_data_dir, "archive")
+    os.makedirs(archive_dir, exist_ok=True)
+
+    dates = []
+    pattern = os.path.join(archive_dir, "*.json")
+    for path in glob.glob(pattern):
+        basename = os.path.basename(path)
+        if basename == "index.json":
+            continue
+        date_str = basename.replace(".json", "")
+        dates.append(date_str)
+
+    dates.sort(reverse=True)
+
+    index_path = os.path.join(archive_dir, "index.json")
+    tmp = index_path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump({"dates": dates, "count": len(dates)}, f)
+    os.replace(tmp, index_path)

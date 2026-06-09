@@ -31,7 +31,7 @@ from src.scorer import (
 from src.store import append_snapshot, read_snapshots, save_json, load_json
 from src.reporter import generate_daily_report, generate_weekly_report, generate_one_liner
 from src.pusher import push_all
-from src.web_exporter import build_panel_data, export_latest, export_archive
+from src.web_exporter import build_panel_data, export_latest, export_archive, update_archive_index
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 SNAPSHOTS_PATH = os.path.join(DATA_DIR, "snapshots.jsonl")
@@ -297,6 +297,7 @@ def do_report(config, push=False):
     panel = build_panel_data(summary, today)
     export_latest(panel, WEB_DATA_DIR)
     export_archive(panel, WEB_DATA_DIR)
+    update_archive_index(WEB_DATA_DIR)
     print(f"✅ Web 面板已更新")
 
     if push:

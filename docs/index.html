@@ -85,6 +85,7 @@
         var activeLanguage = '';
         var activeLabel = '';
         var activeTopic = '';
+        var currentDate = '';  // '' means latest
 
         function getLangColor(lang) {
             var c = { 'Python':'#3572A5','JavaScript':'#f1e05a','TypeScript':'#3178c6',
@@ -99,6 +100,49 @@
 
         async function init() {
             await loadLatest();
+            await loadArchiveIndex();
+        }
+
+        async function loadArchiveIndex() {
+            try {
+                var resp = await fetch('data/archive/index.json');
+                if (!resp.ok) return;
+                var index = await resp.json();
+                renderDateList(index.dates || []);
+            } catch(e) {
+                // archive index not available yet
+            }
+        }
+
+        function renderDateList(dates) {
+            var list = document.getElementById('date-list');
+            var html = '<div class="date-item' + (currentDate === '' ? ' active' : '') +
+                '" onclick="loadLatest()">最新 (' + currentData.date + ')</div>';
+            for (var i = 0; i < dates.length; i++) {
+                var d = dates[i];
+                html += '<div class="date-item' + (currentDate === d ? ' active' : '') +
+                    '" onclick="loadArchive(\'' + d + '\')">' + d + '</div>';
+            }
+            list.innerHTML = html;
+        }
+
+        async function loadArchive(date) {
+            try {
+                var resp = await fetch('data/archive/' + date + '.json');
+                if (!resp.ok) throw new Error('Not found');
+                currentData = await resp.json();
+                currentDate = date;
+                render();
+                renderFilters();
+                var dates = [];
+                try {
+                    var ir = await fetch('data/archive/index.json');
+                    if (ir.ok) { var idx = await ir.json(); dates = idx.dates || []; }
+                } catch(e) {}
+                renderDateList(dates);
+            } catch(e) {
+                alert('该日期的数据不可用: ' + date);
+            }
         }
 
         async function loadLatest() {
@@ -106,10 +150,15 @@
                 var resp = await fetch('data/latest.json');
                 if (!resp.ok) throw new Error('No data');
                 currentData = await resp.json();
+                currentDate = '';
                 render();
                 renderFilters();
-                document.getElementById('date-list').innerHTML =
-                    '<div class="date-item active">最新 (' + currentData.date + ')</div>';
+                var dates = [];
+                try {
+                    var ir = await fetch('data/archive/index.json');
+                    if (ir.ok) { var idx = await ir.json(); dates = idx.dates || []; }
+                } catch(e) {}
+                renderDateList(dates);
             } catch(e) {
                 document.getElementById('content').innerHTML =
                     '<div class="error">暂无数据，请等待 Action 首次运行后生成。</div>';
@@ -204,7 +253,7 @@
                         '<a class="repo-name" href="https://github.com/' + r.repo + '" target="_blank">' + r.repo + '</a>' +
                         '<span style="float:right;color:#8b949e">⭐ ' + r.stars +
                         ' | +' + (r.star_delta_1d || 0) + '/日 +' + (r.star_delta_7d || 0) + '/周 | ' +
-                        (r.score || 0) + '分</span>' +
+                        (r.score || 0).toFixed(1) + '分</span>' +
                         '<div class="repo-meta">' + tags + ' ' + langDot + escHtml(lang) + ' ' + (r.one_liner || '') + '</div>' +
                         '</div>';
                 }).join('');
