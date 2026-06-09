@@ -200,6 +200,8 @@ def do_fetch(config):
                 "score": composite,
                 "labels": labels,
                 "one_liner": one_liner,
+                "language": details.get("language", "unknown"),
+                "topics": details.get("topics", []),
             })
 
             print(f"→ 综合 {composite:.1f} 分, {' '.join(labels) if labels else '未分类'}")

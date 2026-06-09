@@ -11,6 +11,16 @@ import os
 from datetime import datetime, timezone
 
 
+def _compute_distribution(candidates, key, is_list=False):
+    dist = {}
+    for r in candidates:
+        values = r.get(key, []) if is_list else [r.get(key, "unknown")]
+        for v in values:
+            if v:
+                dist[v] = dist.get(v, 0) + 1
+    return dict(sorted(dist.items(), key=lambda x: -x[1]))
+
+
 def build_panel_data(candidates, date_str):
     """构建面板数据，包含候选列表和统计摘要。
 
@@ -24,12 +34,17 @@ def build_panel_data(candidates, date_str):
     top_day = sorted(candidates, key=lambda r: r.get("star_delta_1d", 0), reverse=True)
     top_week = sorted(candidates, key=lambda r: r.get("star_delta_7d", 0), reverse=True)
     new_stars = [r for r in candidates if "🌱新星" in r.get("labels", [])]
+    top_stars = sorted(candidates, key=lambda r: r.get("stars", 0), reverse=True)
 
     stats = {
         "top_day": top_day,
         "top_week": top_week,
         "new_stars": new_stars,
+        "top_stars": top_stars,
         "total_candidates": len(candidates),
+        "language_distribution": _compute_distribution(candidates, "language"),
+        "topic_distribution": _compute_distribution(candidates, "topics", is_list=True),
+        "label_statistics": _compute_distribution(candidates, "labels", is_list=True),
     }
 
     return {

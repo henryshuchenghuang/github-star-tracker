@@ -10,7 +10,7 @@
         h1 { color: #58a6ff; margin-bottom: 8px; }
         .panel { display: flex; gap: 20px; max-width: 1400px; margin: 0 auto; }
         .sidebar { width: 200px; flex-shrink: 0; }
-        .main { flex: 1; }
+        .main { flex: 1; min-width: 0; }
         .date-item { padding: 8px 12px; cursor: pointer; border-radius: 6px; margin-bottom: 4px; }
         .date-item:hover, .date-item.active { background: #21262d; color: #58a6ff; }
         .section { margin-bottom: 24px; }
@@ -30,6 +30,20 @@
         .search-bar input:focus { outline: none; border-color: #58a6ff; }
         .loading { text-align: center; padding: 40px; color: #8b949e; }
         .error { text-align: center; padding: 40px; color: #f85149; }
+        .filter-bar { margin-bottom: 16px; padding: 12px; border: 1px solid #21262d; border-radius: 8px; display: none; }
+        .filter-section { margin-bottom: 8px; }
+        .filter-section:last-child { margin-bottom: 0; }
+        .filter-label { font-size: 0.8em; color: #8b949e; margin-right: 8px; display: inline-block; width: 60px; vertical-align: middle; }
+        .filter-chips { display: inline-flex; flex-wrap: wrap; gap: 4px; vertical-align: middle; }
+        .chip { display: inline-block; padding: 3px 8px; border-radius: 12px; font-size: 0.8em; cursor: pointer; border: 1px solid #30363d; background: #161b22; color: #c9d1d9; user-select: none; }
+        .chip:hover { border-color: #58a6ff; }
+        .chip.active { background: #1f6feb; border-color: #1f6feb; color: #fff; }
+        .chip .count { color: #8b949e; margin-left: 4px; }
+        .chip.active .count { color: rgba(255,255,255,0.7); }
+        .clear-btn { margin-top: 8px; padding: 4px 12px; border-radius: 6px; border: 1px solid #30363d; background: #161b22; color: #c9d1d9; cursor: pointer; font-size: 0.8em; }
+        .clear-btn:hover { border-color: #f85149; color: #f85149; }
+        .lang-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 3px; vertical-align: middle; }
+        .filter-summary { color: #8b949e; margin-bottom: 12px; font-size: 0.85em; }
     </style>
 </head>
 <body>
@@ -38,6 +52,22 @@
 
     <div class="search-bar">
         <input type="text" id="search" placeholder="搜索项目名或标签..." oninput="filterRepos()">
+    </div>
+
+    <div class="filter-bar" id="filter-bar">
+        <div class="filter-section">
+            <span class="filter-label">编程语言</span>
+            <span class="filter-chips" id="lang-chips"></span>
+        </div>
+        <div class="filter-section">
+            <span class="filter-label">评分标签</span>
+            <span class="filter-chips" id="label-chips"></span>
+        </div>
+        <div class="filter-section">
+            <span class="filter-label">热门话题</span>
+            <span class="filter-chips" id="topic-chips"></span>
+        </div>
+        <button class="clear-btn" id="clear-filters" style="display:none" onclick="clearFilters()">✕ 清除筛选</button>
     </div>
 
     <div class="panel">
@@ -51,7 +81,21 @@
     </div>
 
     <script>
-        let currentData = null;
+        var currentData = null;
+        var activeLanguage = '';
+        var activeLabel = '';
+        var activeTopic = '';
+
+        function getLangColor(lang) {
+            var c = { 'Python':'#3572A5','JavaScript':'#f1e05a','TypeScript':'#3178c6',
+                'Go':'#00ADD8','Rust':'#dea584','Java':'#b07219','C':'#555555','C++':'#f34b7d',
+                'C#':'#178600','Ruby':'#701516','PHP':'#4F5D95','Swift':'#ffac45','Kotlin':'#A97BFF',
+                'Dart':'#00B4AB','Scala':'#c22d40','Lua':'#000080','R':'#198CE7',
+                'Jupyter Notebook':'#DA5B0B','Shell':'#89e051','HTML':'#e34c26','CSS':'#563d7c' };
+            return c[lang] || '#8b949e';
+        }
+
+        function escHtml(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
 
         async function init() {
             await loadLatest();
@@ -59,10 +103,11 @@
 
         async function loadLatest() {
             try {
-                const resp = await fetch('data/latest.json');
+                var resp = await fetch('data/latest.json');
                 if (!resp.ok) throw new Error('No data');
                 currentData = await resp.json();
                 render();
+                renderFilters();
                 document.getElementById('date-list').innerHTML =
                     '<div class="date-item active">最新 (' + currentData.date + ')</div>';
             } catch(e) {
@@ -72,18 +117,76 @@
         }
 
         function filterRepos() {
-            render(document.getElementById('search').value.toLowerCase());
+            render();
+            renderFilters();
         }
 
-        function render(filter) {
-            if (!arguments.length) filter = '';
+        function renderFilters() {
+            if (!currentData) return;
+            var stats = currentData.stats || {};
+            var bar = document.getElementById('filter-bar');
+            if (!stats.language_distribution && !stats.label_statistics && !stats.topic_distribution) return;
+            bar.style.display = 'block';
+            renderChips('lang-chips', stats.language_distribution, 'language', activeLanguage);
+            renderChips('label-chips', stats.label_statistics, 'label', activeLabel);
+            renderChips('topic-chips', stats.topic_distribution, 'topic', activeTopic);
+        }
+
+        function renderChips(containerId, dist, type, activeValue) {
+            var container = document.getElementById(containerId);
+            if (!dist || Object.keys(dist).length === 0) { container.innerHTML = ''; return; }
+            container.innerHTML = Object.entries(dist).slice(0, 12).map(function(e) {
+                var value = e[0], count = e[1];
+                var cls = (value === activeValue) ? 'chip active' : 'chip';
+                return '<span class="' + cls + '" onclick="setFilter(\'' + type + '\',\'' + value.replace(/'/g, "\\'") + '\')">'
+                    + escHtml(value) + ' <span class="count">' + count + '</span></span>';
+            }).join('');
+        }
+
+        function setFilter(type, value) {
+            if (type === 'language') { activeLanguage = (activeLanguage === value) ? '' : value; }
+            else if (type === 'label') { activeLabel = (activeLabel === value) ? '' : value; }
+            else if (type === 'topic') { activeTopic = (activeTopic === value) ? '' : value; }
+            document.getElementById('clear-filters').style.display =
+                (activeLanguage || activeLabel || activeTopic) ? 'inline-block' : 'none';
+            render();
+            renderFilters();
+        }
+
+        function clearFilters() {
+            activeLanguage = ''; activeLabel = ''; activeTopic = '';
+            document.getElementById('clear-filters').style.display = 'none';
+            render();
+            renderFilters();
+        }
+
+        function applySearchFilter(list, query) {
+            if (!query) return list;
+            return list.filter(function(c) {
+                return c.repo.toLowerCase().indexOf(query) !== -1 ||
+                       (c.one_liner || '').toLowerCase().indexOf(query) !== -1;
+            });
+        }
+
+        function applyCategoryFilters(list) {
+            if (activeLanguage) {
+                list = list.filter(function(c) { return (c.language || 'unknown') === activeLanguage; });
+            }
+            if (activeLabel) {
+                list = list.filter(function(c) { return (c.labels || []).indexOf(activeLabel) !== -1; });
+            }
+            if (activeTopic) {
+                list = list.filter(function(c) { return (c.topics || []).indexOf(activeTopic) !== -1; });
+            }
+            return list;
+        }
+
+        function render() {
             if (!currentData) return;
             var candidates = currentData.candidates;
             var stats = currentData.stats;
-            var filtered = filter ? candidates.filter(function(c) {
-                return c.repo.toLowerCase().indexOf(filter) !== -1 ||
-                       (c.one_liner || '').toLowerCase().indexOf(filter) !== -1;
-            }) : candidates;
+
+            var searchText = document.getElementById('search').value.toLowerCase();
 
             var tagClass = {
                 '🔥爆发中': 'tag-fire', '🌱新星': 'tag-new',
@@ -95,24 +198,43 @@
                     var tags = (r.labels || []).map(function(l) {
                         return '<span class="tag ' + (tagClass[l] || '') + '">' + l + '</span>';
                     }).join('');
+                    var lang = r.language || 'unknown';
+                    var langDot = '<span class="lang-dot" style="background:' + getLangColor(lang) + '"></span>';
                     return '<div class="repo-card">' +
                         '<a class="repo-name" href="https://github.com/' + r.repo + '" target="_blank">' + r.repo + '</a>' +
                         '<span style="float:right;color:#8b949e">⭐ ' + r.stars +
                         ' | +' + (r.star_delta_1d || 0) + '/日 +' + (r.star_delta_7d || 0) + '/周 | ' +
                         (r.score || 0) + '分</span>' +
-                        '<div class="repo-meta">' + tags + ' ' + (r.one_liner || '') + '</div>' +
+                        '<div class="repo-meta">' + tags + ' ' + langDot + escHtml(lang) + ' ' + (r.one_liner || '') + '</div>' +
                         '</div>';
                 }).join('');
             }
 
-            var topDay = (stats && stats.top_day) ? stats.top_day.slice(0, 10) : filtered.slice(0, 10);
-            var topWeek = (stats && stats.top_week) ? stats.top_week.slice(0, 10) : filtered.slice(0, 10);
-            var newStars = (stats && stats.new_stars) ? stats.new_stars.slice(0, 10) : [];
+            function applyAllFilters(list) {
+                return applyCategoryFilters(applySearchFilter(list, searchText));
+            }
+
+            var filtered = applyAllFilters(candidates.slice());
+
+            var topDay = (stats && stats.top_day) ? applyAllFilters(stats.top_day).slice(0, 10) : filtered.slice(0, 10);
+            var topWeek = (stats && stats.top_week) ? applyAllFilters(stats.top_week).slice(0, 10) : filtered.slice(0, 10);
+            var newStars = (stats && stats.new_stars) ? applyAllFilters(stats.new_stars).slice(0, 10) : [];
+            var topStars = (stats && stats.top_stars) ? applyAllFilters(stats.top_stars).slice(0, 10) : [];
+
+            var filterSummary = '';
+            if (activeLanguage) filterSummary += ' 语言: ' + activeLanguage;
+            if (activeLabel) filterSummary += ' 标签: ' + activeLabel;
+            if (activeTopic) filterSummary += ' 话题: ' + activeTopic;
+            if (searchText) filterSummary += (filterSummary ? ' + ' : '') + '搜索: ' + searchText;
+            var filterNotice = filterSummary ?
+                '<p class="filter-summary">当前筛选: ' + filterSummary + ' (共 ' + filtered.length + ' 个项目)</p>' : '';
 
             document.getElementById('content').innerHTML =
+                filterNotice +
                 '<div class="section"><h2>🔥 今日增速 TOP 10</h2>' + renderRepos(topDay) + '</div>' +
                 '<div class="section"><h2>💥 本周爆发榜</h2>' + renderRepos(topWeek) + '</div>' +
                 '<div class="section"><h2>🌱 潜力新星</h2>' + (newStars.length ? renderRepos(newStars) : '<p style="color:#8b949e">暂无</p>') + '</div>' +
+                '<div class="section"><h2>🏆 历史星数榜</h2>' + (topStars.length ? renderRepos(topStars) : '<p style="color:#8b949e">暂无</p>') + '</div>' +
                 '<p style="color:#8b949e;text-align:center;margin-top:24px">' + currentData.date + '</p>';
         }
 
