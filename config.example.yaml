@@ -1,0 +1,31 @@
+github_token: "ghp_xxx"
+tracking:
+  languages: ["all"]
+  min_stars: 100
+  new_repo_days: 90
+  new_repo_min_stars: 500
+  top_n_candidates: 50
+  org_whitelist:
+    - google
+    - meta
+    - anthropic
+    - bytedance
+    - alibaba
+    - microsoft
+    - apple
+    - openai
+    - deepseek-ai
+push:
+  email:
+    enabled: false
+    provider: resend
+    api_key: ""
+    from: ""
+    to: ""
+  wechat:
+    enabled: false
+    provider: serverchan
+    token: ""
+  feishu:
+    enabled: false
+    webhook_url: ""
