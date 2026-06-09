@@ -6,11 +6,20 @@ on:
     - cron: '3 1 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   track:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PYTHONIOENCODING: utf-8
+
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -22,7 +31,7 @@ jobs:
       - name: Create config from secrets
         run: |
           cat > config.yaml << 'YEOF'
-          github_token: "${{ secrets.GITHUB_TOKEN }}"
+          github_token: "${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}"
           tracking:
             languages: ["all"]
             min_stars: 100
@@ -36,6 +45,7 @@ jobs:
               - bytedance
               - alibaba
               - microsoft
+              - apple
               - openai
               - deepseek-ai
           push:
@@ -57,6 +67,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main
           git add data/ docs/data/
-          git diff --staged --quiet || git commit -m "data: auto snapshot $(date -Iminutes)"
+          git diff --staged --quiet || git commit -m "data: auto snapshot $(date -u +'%Y-%m-%dT%H:%M')"
           git push
