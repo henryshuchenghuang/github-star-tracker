@@ -31,9 +31,11 @@ def build_panel_data(candidates, date_str):
     Returns:
         包含 date、generated_at、candidates、stats 的 dict。
     """
-    top_day = sorted(candidates, key=lambda r: r.get("star_delta_1d", 0), reverse=True)
-    top_week = sorted(candidates, key=lambda r: r.get("star_delta_7d", 0), reverse=True)
-    new_stars = [r for r in candidates if "🌱新星" in r.get("labels", [])]
+    top_day = sorted(candidates, key=lambda r: (r.get("star_delta_1d", 0), r.get("stars", 0)), reverse=True)
+    top_week = sorted(candidates, key=lambda r: (r.get("star_delta_7d", 0), r.get("stars", 0)), reverse=True)
+    new_stars = sorted(
+        [r for r in candidates if "🌱新星" in r.get("labels", [])],
+        key=lambda r: r.get("score", 0), reverse=True)
     top_stars = sorted(candidates, key=lambda r: r.get("stars", 0), reverse=True)
 
     stats = {

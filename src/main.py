@@ -88,9 +88,30 @@ def do_fetch(config):
     prev_snapshots = read_snapshots(SNAPSHOTS_PATH)
     print(f"📊 已有 {len(prev_snapshots)} 条历史快照")
 
-    print("🔍 搜索新仓库...")
-    repos = fetcher.search_new_repos(since_days=7)
-    print(f"✅ 找到 {len(repos)} 个候选仓库")
+    print("🔍 搜索最近 7 天新仓库...")
+    new_repos = fetcher.search_new_repos(since_days=7)
+    print(f"   找到 {len(new_repos)} 个新仓库")
+
+    print("🔍 搜索全 GitHub 历史最高星数仓库...")
+    try:
+        all_time_repos = fetcher.search_all_time_top_repos(min_stars=500)
+        print(f"   找到 {len(all_time_repos)} 个历史高星仓库")
+    except Exception as e:
+        print(f"   ⚠️ 历史搜索失败: {e}，将仅使用新仓库")
+        all_time_repos = []
+
+    # 合并去重（优先保留 new_repos 中的版本，因为它们数据更新）
+    seen = set()
+    repos = []
+    for r in new_repos:
+        seen.add(r.full_name.lower())
+        repos.append(r)
+    for r in all_time_repos:
+        if r.full_name.lower() not in seen:
+            seen.add(r.full_name.lower())
+            repos.append(r)
+
+    print(f"✅ 合并后共 {len(repos)} 个候选仓库")
 
     all_topics = set()
     for p in profiles.values():

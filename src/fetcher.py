@@ -50,6 +50,16 @@ class GitHubFetcher:
         except Exception:
             return 0
 
+    def search_all_time_top_repos(self, min_stars=500):
+        """搜索全 GitHub 历史星数最高的仓库（不限创建时间）。"""
+        query = f"stars:>{min_stars}"
+        langs = self.config["tracking"].get("languages", ["all"])
+        if "all" not in langs:
+            lang_filter = " OR ".join(f"language:{l}" for l in langs)
+            query += f" ({lang_filter})"
+        repos = self.client.search_repositories(query=query, sort="stars", order="desc")
+        return list(repos[:self.config["tracking"]["top_n_candidates"]])
+
     def get_issue_stats(self, full_name):
         """获取 Issue 统计"""
         repo = self.client.get_repo(full_name)
