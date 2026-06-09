@@ -1,5 +1,6 @@
 import os
 import sys
+from datetime import datetime, timezone, timedelta
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from src.scorer import (
@@ -20,13 +21,15 @@ def test_score_growth():
 
 
 def test_score_novelty_new():
-    repo = {"created_at": "2026-05-15T00:00:00Z", "stars": 600}
+    recent = (datetime.now(timezone.utc) - timedelta(days=10)).isoformat()
+    repo = {"created_at": recent, "stars": 600}
     s = score_novelty(repo, set())
     assert s > 50  # new + high stars = high novelty
 
 
 def test_score_novelty_old():
-    repo = {"created_at": "2020-01-01T00:00:00Z", "stars": 100}
+    old = (datetime.now(timezone.utc) - timedelta(days=1000)).isoformat()
+    repo = {"created_at": old, "stars": 100}
     s = score_novelty(repo, set())
     assert s < 30  # old + low stars = low novelty
 
