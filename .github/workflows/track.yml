@@ -21,7 +21,7 @@ jobs:
 
       - name: Create config from secrets
         run: |
-          cat > src/config.yaml << 'YEOF'
+          cat > config.yaml << 'YEOF'
           github_token: "${{ secrets.GITHUB_TOKEN }}"
           tracking:
             languages: ["all"]
