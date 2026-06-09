@@ -124,7 +124,7 @@ def compute_readme_score(readme_text):
 
 def compute_composite(dimensions):
     """计算综合评分"""
-    return sum(dimensions[k] * WEIGHTS[k] for k in WEIGHTS)
+    return round(sum(dimensions[k] * WEIGHTS[k] for k in WEIGHTS), 1)
 
 
 def compute_labels(dimensions, repo):
