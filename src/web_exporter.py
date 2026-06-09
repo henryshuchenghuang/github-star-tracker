@@ -49,19 +49,32 @@ def export_latest(panel_data, web_data_dir):
     """
     os.makedirs(web_data_dir, exist_ok=True)
     path = os.path.join(web_data_dir, "latest.json")
-    with open(path, "w", encoding="utf-8") as f:
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
         json.dump(panel_data, f, ensure_ascii=False, indent=2)
+    os.replace(tmp, path)
 
 
 def export_archive(panel_data, web_data_dir):
     """将面板数据写入 {web_data_dir}/archive/{date}.json。
 
+    日期格式要求 YYYY-MM-DD，拒绝含路径分隔符的输入。
+
     Args:
         panel_data:   build_panel_data 返回的 dict。
         web_data_dir: Web 数据目录，如 "web/data"。
     """
+    date_str = panel_data["date"]
+    _validate_date_str(date_str)
     archive_dir = os.path.join(web_data_dir, "archive")
     os.makedirs(archive_dir, exist_ok=True)
-    path = os.path.join(archive_dir, f"{panel_data['date']}.json")
-    with open(path, "w", encoding="utf-8") as f:
+    path = os.path.join(archive_dir, f"{date_str}.json")
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
         json.dump(panel_data, f, ensure_ascii=False, indent=2)
+    os.replace(tmp, path)
+
+
+def _validate_date_str(s):
+    if any(sep in s for sep in ("/", "\\", "..")):
+        raise ValueError(f"Invalid date format: {s}")
