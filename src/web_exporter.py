@@ -1,0 +1,67 @@
+"""Web 面板 JSON 导出
+
+为静态 Web 面板提供数据导出功能：
+- build_panel_data: 构建带统计摘要的面板数据结构
+- export_latest:   写入 latest.json（最新快照）
+- export_archive:   写入 archive/{date}.json（历史归档）
+"""
+
+import json
+import os
+from datetime import datetime, timezone
+
+
+def build_panel_data(candidates, date_str):
+    """构建面板数据，包含候选列表和统计摘要。
+
+    Args:
+        candidates: 候选项目列表（每个元素为 dict）。
+        date_str:   日期字符串，如 "2026-06-10"。
+
+    Returns:
+        包含 date、generated_at、candidates、stats 的 dict。
+    """
+    top_day = sorted(candidates, key=lambda r: r.get("star_delta_1d", 0), reverse=True)
+    top_week = sorted(candidates, key=lambda r: r.get("star_delta_7d", 0), reverse=True)
+    new_stars = [r for r in candidates if "🌱新星" in r.get("labels", [])]
+
+    stats = {
+        "top_day": top_day,
+        "top_week": top_week,
+        "new_stars": new_stars,
+        "total_candidates": len(candidates),
+    }
+
+    return {
+        "date": date_str,
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "candidates": candidates,
+        "stats": stats,
+    }
+
+
+def export_latest(panel_data, web_data_dir):
+    """将面板数据写入 {web_data_dir}/latest.json。
+
+    Args:
+        panel_data:   build_panel_data 返回的 dict。
+        web_data_dir: Web 数据目录，如 "web/data"。
+    """
+    os.makedirs(web_data_dir, exist_ok=True)
+    path = os.path.join(web_data_dir, "latest.json")
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(panel_data, f, ensure_ascii=False, indent=2)
+
+
+def export_archive(panel_data, web_data_dir):
+    """将面板数据写入 {web_data_dir}/archive/{date}.json。
+
+    Args:
+        panel_data:   build_panel_data 返回的 dict。
+        web_data_dir: Web 数据目录，如 "web/data"。
+    """
+    archive_dir = os.path.join(web_data_dir, "archive")
+    os.makedirs(archive_dir, exist_ok=True)
+    path = os.path.join(archive_dir, f"{panel_data['date']}.json")
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(panel_data, f, ensure_ascii=False, indent=2)
