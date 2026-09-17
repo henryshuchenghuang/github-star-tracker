@@ -1,18 +1,17 @@
 {
-  "generated_at": "2026-09-17T04:48:00.881461+00:00",
+  "generated_at": "2026-09-17T05:53:22.960959+00:00",
   "summary": [
     {
       "rank": 1,
       "repo": "deepseek-ai/deepseek-harness",
-      "stars": 226938,
-      "star_delta_1d": 371,
-      "star_delta_7d": 9202,
-      "score": 75.6,
+      "stars": 226988,
+      "star_delta_1d": 50,
+      "star_delta_7d": 9183,
+      "score": 68.6,
       "labels": [
-        "🔥爆发中",
         "🏢大厂背书"
       ],
-      "one_liner": "deepseek-ai/deepseek-harness：DeepSeek Harness: Everything is a Plugin.，本周 +9202⭐",
+      "one_liner": "deepseek-ai/deepseek-harness：DeepSeek Harness: Everything is a Plugin.，本周 +9183⭐",
       "language": "TypeScript",
       "topics": [
         "ai-agents",
@@ -24,15 +23,14 @@
     {
       "rank": 2,
       "repo": "microsoft/markitdown",
-      "stars": 184901,
-      "star_delta_1d": 118,
-      "star_delta_7d": 2665,
-      "score": 65.4,
+      "stars": 184915,
+      "star_delta_1d": 14,
+      "star_delta_7d": 2672,
+      "score": 53.4,
       "labels": [
-        "🔥爆发中",
         "🏢大厂背书"
       ],
-      "one_liner": "microsoft/markitdown：Python tool for converting files and office documents to Markdown.，本周 +2665⭐",
+      "one_liner": "microsoft/markitdown：Python tool for converting files and office documents to Markdown.，本周 +2672⭐",
       "language": "Python",
       "topics": [
         "autogen",
@@ -46,15 +44,69 @@
     },
     {
       "rank": 3,
-      "repo": "NousResearch/hermes-agent",
-      "stars": 246258,
-      "star_delta_1d": 96,
-      "star_delta_7d": 2339,
-      "score": 59.8,
+      "repo": "affaan-m/ECC",
+      "stars": 260515,
+      "star_delta_1d": 56,
+      "star_delta_7d": 5184,
+      "score": 51.6,
+      "labels": [],
+      "one_liner": "affaan-m/ECC：The agent harness performance optimization system. Skills, instincts, memory, se，本周 +5184⭐",
+      "language": "JavaScript",
+      "topics": [
+        "ai-agents",
+        "anthropic",
+        "claude",
+        "claude-code",
+        "developer-tools",
+        "llm",
+        "mcp",
+        "productivity"
+      ]
+    },
+    {
+      "rank": 4,
+      "repo": "microsoft/vscode",
+      "stars": 192603,
+      "star_delta_1d": 4,
+      "star_delta_7d": 1075,
+      "score": 51.1,
       "labels": [
-        "🔥爆发中"
+        "🏢大厂背书"
       ],
-      "one_liner": "NousResearch/hermes-agent：The agent that grows with you，本周 +2339⭐",
+      "one_liner": "microsoft/vscode：Visual Studio Code，本周 +1075⭐",
+      "language": "TypeScript",
+      "topics": [
+        "editor",
+        "electron",
+        "microsoft",
+        "typescript",
+        "visual-studio-code"
+      ]
+    },
+    {
+      "rank": 5,
+      "repo": "ai-sucks-butt/ai-sucks-butt",
+      "stars": 2049,
+      "star_delta_1d": 68,
+      "star_delta_7d": 1658,
+      "score": 50.6,
+      "labels": [
+        "🔥爆发中",
+        "🌱新星"
+      ],
+      "one_liner": "ai-sucks-butt/ai-sucks-butt：If you think AI sucks, star the repo.，本周 +1658⭐",
+      "language": "Python",
+      "topics": []
+    },
+    {
+      "rank": 6,
+      "repo": "NousResearch/hermes-agent",
+      "stars": 246273,
+      "star_delta_1d": 15,
+      "star_delta_7d": 2344,
+      "score": 48.4,
+      "labels": [],
+      "one_liner": "NousResearch/hermes-agent：The agent that grows with you，本周 +2344⭐",
       "language": "Python",
       "topics": [
         "ai",
@@ -73,15 +125,34 @@
       ]
     },
     {
-      "rank": 4,
+      "rank": 7,
+      "repo": "obra/superpowers",
+      "stars": 287724,
+      "star_delta_1d": 32,
+      "star_delta_7d": 3564,
+      "score": 47.7,
+      "labels": [],
+      "one_liner": "obra/superpowers：An agentic skills framework & software development methodology that works.，本周 +3564⭐",
+      "language": "Shell",
+      "topics": [
+        "ai",
+        "brainstorming",
+        "coding",
+        "obra",
+        "sdlc",
+        "skills",
+        "subagent-driven-development",
+        "superpowers"
+      ]
+    },
+    {
+      "rank": 8,
       "repo": "firecrawl/firecrawl",
-      "stars": 181361,
-      "star_delta_1d": 97,
+      "stars": 181379,
+      "star_delta_1d": 18,
       "star_delta_7d": 2893,
-      "score": 58.8,
-      "labels": [
-        "🔥爆发中"
-      ],
+      "score": 47.7,
+      "labels": [],
       "one_liner": "firecrawl/firecrawl：The web data API to search, scrape, and interact at scale. 🔥，本周 +2893⭐",
       "language": "TypeScript",
       "topics": [
@@ -107,82 +178,65 @@
       ]
     },
     {
-      "rank": 5,
-      "repo": "affaan-m/ECC",
-      "stars": 260459,
-      "star_delta_1d": 332,
-      "star_delta_7d": 5160,
-      "score": 57.8,
+      "rank": 9,
+      "repo": "anomalyco/opencode",
+      "stars": 207970,
+      "star_delta_1d": 8,
+      "star_delta_7d": 1752,
+      "score": 47.0,
+      "labels": [],
+      "one_liner": "anomalyco/opencode：The open source coding agent.，本周 +1752⭐",
+      "language": "TypeScript",
+      "topics": []
+    },
+    {
+      "rank": 10,
+      "repo": "Chuloo/mural",
+      "stars": 1271,
+      "star_delta_1d": 2,
+      "star_delta_7d": 963,
+      "score": 46.5,
       "labels": [
-        "🔥爆发中"
+        "🌱新星"
       ],
-      "one_liner": "affaan-m/ECC：The agent harness performance optimization system. Skills, instincts, memory, se，本周 +5160⭐",
-      "language": "JavaScript",
+      "one_liner": "Chuloo/mural：The language app you eventually delete. A native iPhone companion for learning t，本周 +963⭐",
+      "language": "Kotlin",
       "topics": [
-        "ai-agents",
-        "anthropic",
-        "claude",
-        "claude-code",
-        "developer-tools",
-        "llm",
-        "mcp",
-        "productivity"
+        "ios",
+        "language-learning",
+        "open-source",
+        "swiftui"
       ]
     },
     {
-      "rank": 6,
-      "repo": "sindresorhus/awesome",
-      "stars": 506856,
-      "star_delta_1d": 123,
-      "star_delta_7d": 2263,
-      "score": 57.1,
-      "labels": [
-        "🔥爆发中"
-      ],
-      "one_liner": "sindresorhus/awesome：😎 Awesome lists about all kinds of interesting topics [NOTE: Pull requests are t，本周 +2263⭐",
-      "language": "unknown",
+      "rank": 11,
+      "repo": "yt-dlp/yt-dlp",
+      "stars": 191672,
+      "star_delta_1d": 7,
+      "star_delta_7d": 1625,
+      "score": 46.4,
+      "labels": [],
+      "one_liner": "yt-dlp/yt-dlp：A feature-rich command-line audio/video downloader，本周 +1625⭐",
+      "language": "Python",
       "topics": [
-        "awesome",
-        "awesome-list",
-        "lists",
-        "resources",
-        "unicorns"
+        "cli",
+        "downloader",
+        "python",
+        "sponsorblock",
+        "youtube-dl",
+        "youtube-downloader",
+        "yt-dlp"
       ]
     },
     {
-      "rank": 7,
-      "repo": "obra/superpowers",
-      "stars": 287692,
-      "star_delta_1d": 98,
-      "star_delta_7d": 3564,
-      "score": 56.9,
-      "labels": [
-        "🔥爆发中"
-      ],
-      "one_liner": "obra/superpowers：An agentic skills framework & software development methodology that works.，本周 +3564⭐",
-      "language": "Shell",
-      "topics": [
-        "ai",
-        "brainstorming",
-        "coding",
-        "obra",
-        "sdlc",
-        "skills",
-        "subagent-driven-development",
-        "superpowers"
-      ]
-    },
-    {
-      "rank": 8,
+      "rank": 12,
       "repo": "public-apis/public-apis",
-      "stars": 480992,
-      "star_delta_1d": 85,
-      "star_delta_7d": 2787,
-      "score": 56.5,
-      "labels": [
-        "🔥爆发中"
-      ],
-      "one_liner": "public-apis/public-apis：A collective list of free APIs，本周 +2787⭐",
+      "stars": 481002,
+      "star_delta_1d": 10,
+      "star_delta_7d": 2763,
+      "score": 46.0,
+      "labels": [],
+      "one_liner": "public-apis/public-apis：A collective list of free APIs，本周 +2763⭐",
       "language": "Python",
       "topics": [
         "api",
@@ -201,43 +255,46 @@
       ]
     },
     {
-      "rank": 9,
-      "repo": "ai-sucks-butt/ai-sucks-butt",
-      "stars": 1981,
-      "star_delta_1d": 573,
-      "star_delta_7d": 1590,
-      "score": 56.3,
-      "labels": [
-        "🔥爆发中",
-        "🌱新星"
-      ],
-      "one_liner": "ai-sucks-butt/ai-sucks-butt：If you think AI sucks, star the repo.，本周 +1590⭐",
-      "language": "Python",
-      "topics": []
-    },
-    {
-      "rank": 10,
-      "repo": "anomalyco/opencode",
-      "stars": 207962,
-      "star_delta_1d": 58,
-      "star_delta_7d": 1754,
-      "score": 54.0,
+      "rank": 13,
+      "repo": "huggingface/transformers",
+      "stars": 166266,
+      "star_delta_1d": 4,
+      "star_delta_7d": 1211,
+      "score": 46.0,
       "labels": [],
-      "one_liner": "anomalyco/opencode：The open source coding agent.，本周 +1754⭐",
-      "language": "TypeScript",
-      "topics": []
+      "one_liner": "huggingface/transformers：🤗 Transformers: the model-definition framework for state-of-the-art machine lear，本周 +1211⭐",
+      "language": "Python",
+      "topics": [
+        "audio",
+        "deep-learning",
+        "deepseek",
+        "gemma",
+        "glm",
+        "hacktoberfest",
+        "llm",
+        "machine-learning",
+        "model-hub",
+        "natural-language-processing",
+        "nlp",
+        "pretrained-models",
+        "python",
+        "pytorch",
+        "pytorch-transformers",
+        "qwen",
+        "speech-recognition",
+        "transformer",
+        "vlm"
+      ]
     },
     {
-      "rank": 11,
+      "rank": 14,
       "repo": "trimstray/the-book-of-secret-knowledge",
-      "stars": 244238,
-      "star_delta_1d": 70,
-      "star_delta_7d": 1306,
-      "score": 53.8,
-      "labels": [
-        "🔥爆发中"
-      ],
-      "one_liner": "trimstray/the-book-of-secret-knowledge：A collection of inspiring lists, manuals, cheatsheets, blogs, hacks, one-liners,，本周 +1306⭐",
+      "stars": 244249,
+      "star_delta_1d": 11,
+      "star_delta_7d": 1308,
+      "score": 45.5,
+      "labels": [],
+      "one_liner": "trimstray/the-book-of-secret-knowledge：A collection of inspiring lists, manuals, cheatsheets, blogs, hacks, one-liners,，本周 +1308⭐",
       "language": "unknown",
       "topics": [
         "awesome",
@@ -262,16 +319,173 @@
       ]
     },
     {
-      "rank": 12,
-      "repo": "n8n-io/n8n",
-      "stars": 204697,
-      "star_delta_1d": 82,
-      "star_delta_7d": 809,
-      "score": 52.2,
+      "rank": 15,
+      "repo": "sindresorhus/awesome",
+      "stars": 506871,
+      "star_delta_1d": 15,
+      "star_delta_7d": 2268,
+      "score": 45.1,
+      "labels": [],
+      "one_liner": "sindresorhus/awesome：😎 Awesome lists about all kinds of interesting topics [NOTE: Pull requests are t，本周 +2268⭐",
+      "language": "unknown",
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "lists",
+        "resources",
+        "unicorns"
+      ]
+    },
+    {
+      "rank": 16,
+      "repo": "react/react",
+      "stars": 250516,
+      "star_delta_1d": 1,
+      "star_delta_7d": 874,
+      "score": 44.2,
+      "labels": [],
+      "one_liner": "react/react：The library for web and native user interfaces.，本周 +874⭐",
+      "language": "JavaScript",
+      "topics": [
+        "declarative",
+        "frontend",
+        "javascript",
+        "library",
+        "react",
+        "ui"
+      ]
+    },
+    {
+      "rank": 17,
+      "repo": "practical-tutorials/project-based-learning",
+      "stars": 283594,
+      "star_delta_1d": 8,
+      "star_delta_7d": 792,
+      "score": 43.8,
+      "labels": [],
+      "one_liner": "practical-tutorials/project-based-learning：Curated list of project-based tutorials，本周 +792⭐",
+      "language": "Python",
+      "topics": [
+        "beginner-project",
+        "cpp",
+        "golang",
+        "javascript",
+        "project",
+        "python",
+        "tutorial",
+        "webdevelopment"
+      ]
+    },
+    {
+      "rank": 18,
+      "repo": "awesome-selfhosted/awesome-selfhosted",
+      "stars": 319777,
+      "star_delta_1d": 11,
+      "star_delta_7d": 1522,
+      "score": 43.6,
+      "labels": [],
+      "one_liner": "awesome-selfhosted/awesome-selfhosted：A list of Free Software network services and web applications which can be hoste，本周 +1522⭐",
+      "language": "unknown",
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "cloud",
+        "free-software",
+        "hosting",
+        "privacy",
+        "self-hosted",
+        "selfhosted"
+      ]
+    },
+    {
+      "rank": 19,
+      "repo": "tensorflow/tensorflow",
+      "stars": 200152,
+      "star_delta_1d": 1,
+      "star_delta_7d": 843,
+      "score": 43.0,
+      "labels": [],
+      "one_liner": "tensorflow/tensorflow：An Open Source Machine Learning Framework for Everyone，本周 +843⭐",
+      "language": "C++",
+      "topics": [
+        "deep-learning",
+        "deep-neural-networks",
+        "distributed",
+        "machine-learning",
+        "ml",
+        "neural-network",
+        "python",
+        "tensorflow"
+      ]
+    },
+    {
+      "rank": 20,
+      "repo": "sumimakito/Mac-Duo",
+      "stars": 954,
+      "star_delta_1d": 2,
+      "star_delta_7d": 562,
+      "score": 42.7,
       "labels": [
-        "🔥爆发中"
+        "🌱新星"
       ],
-      "one_liner": "n8n-io/n8n：Fair-code workflow automation platform with native AI capabilities. Combine visu，本周 +809⭐",
+      "one_liner": "sumimakito/Mac-Duo：Wish you could bring the iPhone Duo effect to your MacBook?，本周 +562⭐",
+      "language": "Swift",
+      "topics": [
+        "flip",
+        "iphone",
+        "iphoneduo",
+        "mac",
+        "macos",
+        "menubar",
+        "menubar-app",
+        "menubarapp"
+      ]
+    },
+    {
+      "rank": 21,
+      "repo": "vuejs/vue",
+      "stars": 212814,
+      "star_delta_1d": 0,
+      "star_delta_7d": 789,
+      "score": 42.6,
+      "labels": [],
+      "one_liner": "vuejs/vue：This is the repo for Vue 2. For Vue 3, go to https://github.com/vuejs/core，本周 +789⭐",
+      "language": "TypeScript",
+      "topics": [
+        "framework",
+        "frontend",
+        "javascript",
+        "vue"
+      ]
+    },
+    {
+      "rank": 22,
+      "repo": "codecrafters-io/build-your-own-x",
+      "stars": 547763,
+      "star_delta_1d": 4,
+      "star_delta_7d": 1485,
+      "score": 42.5,
+      "labels": [],
+      "one_liner": "codecrafters-io/build-your-own-x：Master programming by recreating your favorite technologies from scratch.，本周 +1485⭐",
+      "language": "Markdown",
+      "topics": [
+        "awesome-list",
+        "free",
+        "programming",
+        "tutorial-code",
+        "tutorial-exercises",
+        "tutorials"
+      ]
+    },
+    {
+      "rank": 23,
+      "repo": "n8n-io/n8n",
+      "stars": 204705,
+      "star_delta_1d": 8,
+      "star_delta_7d": 813,
+      "score": 41.7,
+      "labels": [],
+      "one_liner": "n8n-io/n8n：Fair-code workflow automation platform with native AI capabilities. Combine visu，本周 +813⭐",
       "language": "TypeScript",
       "topics": [
         "ai",
@@ -297,159 +511,14 @@
       ]
     },
     {
-      "rank": 13,
-      "repo": "awesome-selfhosted/awesome-selfhosted",
-      "stars": 319766,
-      "star_delta_1d": 68,
-      "star_delta_7d": 1523,
-      "score": 51.6,
-      "labels": [
-        "🔥爆发中"
-      ],
-      "one_liner": "awesome-selfhosted/awesome-selfhosted：A list of Free Software network services and web applications which can be hoste，本周 +1523⭐",
-      "language": "unknown",
-      "topics": [
-        "awesome",
-        "awesome-list",
-        "cloud",
-        "free-software",
-        "hosting",
-        "privacy",
-        "self-hosted",
-        "selfhosted"
-      ]
-    },
-    {
-      "rank": 14,
-      "repo": "codecrafters-io/build-your-own-x",
-      "stars": 547759,
-      "star_delta_1d": 66,
-      "star_delta_7d": 1490,
-      "score": 51.3,
-      "labels": [
-        "🔥爆发中"
-      ],
-      "one_liner": "codecrafters-io/build-your-own-x：Master programming by recreating your favorite technologies from scratch.，本周 +1490⭐",
-      "language": "Markdown",
-      "topics": [
-        "awesome-list",
-        "free",
-        "programming",
-        "tutorial-code",
-        "tutorial-exercises",
-        "tutorials"
-      ]
-    },
-    {
-      "rank": 15,
-      "repo": "yt-dlp/yt-dlp",
-      "stars": 191665,
-      "star_delta_1d": 41,
-      "star_delta_7d": 1625,
-      "score": 51.1,
-      "labels": [],
-      "one_liner": "yt-dlp/yt-dlp：A feature-rich command-line audio/video downloader，本周 +1625⭐",
-      "language": "Python",
-      "topics": [
-        "cli",
-        "downloader",
-        "python",
-        "sponsorblock",
-        "youtube-dl",
-        "youtube-downloader",
-        "yt-dlp"
-      ]
-    },
-    {
-      "rank": 16,
-      "repo": "Chuloo/mural",
-      "stars": 1269,
-      "star_delta_1d": 28,
-      "star_delta_7d": 961,
-      "score": 50.1,
-      "labels": [
-        "🌱新星"
-      ],
-      "one_liner": "Chuloo/mural：The language app you eventually delete. A native iPhone companion for learning t，本周 +961⭐",
-      "language": "Kotlin",
-      "topics": [
-        "ios",
-        "language-learning",
-        "open-source",
-        "swiftui"
-      ]
-    },
-    {
-      "rank": 17,
-      "repo": "vinta/awesome-python",
-      "stars": 321143,
-      "star_delta_1d": 60,
-      "star_delta_7d": 1536,
-      "score": 47.8,
-      "labels": [
-        "🔥爆发中"
-      ],
-      "one_liner": "vinta/awesome-python：The definitive list that answers \"I want to do X in Python, which tool should I ，本周 +1536⭐",
-      "language": "Python",
-      "topics": [
-        "awesome",
-        "awesome-list",
-        "python",
-        "python-frameworks",
-        "python-libraries",
-        "python-tools"
-      ]
-    },
-    {
-      "rank": 18,
-      "repo": "microsoft/vscode",
-      "stars": 192599,
-      "star_delta_1d": -19,
-      "star_delta_7d": 1077,
-      "score": 47.8,
-      "labels": [
-        "🏢大厂背书"
-      ],
-      "one_liner": "microsoft/vscode：Visual Studio Code，本周 +1077⭐",
-      "language": "TypeScript",
-      "topics": [
-        "editor",
-        "electron",
-        "microsoft",
-        "typescript",
-        "visual-studio-code"
-      ]
-    },
-    {
-      "rank": 19,
-      "repo": "youngyangyang04/llm-master",
-      "stars": 637,
-      "star_delta_1d": 78,
-      "star_delta_7d": 242,
-      "score": 47.4,
-      "labels": [
-        "🌱新星"
-      ],
-      "one_liner": "youngyangyang04/llm-master：大模型（LLM）全栈学习路线与中文教程🔥：覆盖 Prompt Engineering、RAG、AI Agent、MCP、微调、模型部署、Transformer、，本周 +242⭐",
-      "language": "unknown",
-      "topics": [
-        "agent",
-        "large-language-models",
-        "llm",
-        "llm-learning",
-        "llm-tutorial",
-        "rag"
-      ]
-    },
-    {
-      "rank": 20,
+      "rank": 24,
       "repo": "donnemartin/system-design-primer",
-      "stars": 370428,
-      "star_delta_1d": 46,
-      "star_delta_7d": 1356,
-      "score": 47.0,
+      "stars": 370435,
+      "star_delta_1d": 7,
+      "star_delta_7d": 1355,
+      "score": 41.6,
       "labels": [],
-      "one_liner": "donnemartin/system-design-primer：Learn how to design large-scale systems. Prep for the system design interview.  ，本周 +1356⭐",
+      "one_liner": "donnemartin/system-design-primer：Learn how to design large-scale systems. Prep for the system design interview.  ，本周 +1355⭐",
       "language": "Python",
       "topics": [
         "design",
@@ -468,242 +537,16 @@
       ]
     },
     {
-      "rank": 21,
-      "repo": "mattpocock/skills",
-      "stars": 263741,
-      "star_delta_1d": 186,
-      "star_delta_7d": 5729,
-      "score": 46.9,
-      "labels": [
-        "🔥爆发中"
-      ],
-      "one_liner": "mattpocock/skills：Skills for Real Engineers. Straight from my .agents directory.，本周 +5729⭐",
-      "language": "Shell",
-      "topics": []
-    },
-    {
-      "rank": 22,
-      "repo": "ollama/ollama",
-      "stars": 181205,
-      "star_delta_1d": 41,
-      "star_delta_7d": 665,
-      "score": 46.5,
-      "labels": [],
-      "one_liner": "ollama/ollama：Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and o，本周 +665⭐",
-      "language": "Go",
-      "topics": [
-        "deepseek",
-        "gemma",
-        "gemma3",
-        "glm",
-        "go",
-        "golang",
-        "gpt-oss",
-        "llama",
-        "llama3",
-        "llm",
-        "llms",
-        "minimax",
-        "mistral",
-        "ollama",
-        "qwen"
-      ]
-    },
-    {
-      "rank": 23,
-      "repo": "practical-tutorials/project-based-learning",
-      "stars": 283586,
-      "star_delta_1d": 26,
-      "star_delta_7d": 789,
-      "score": 46.2,
-      "labels": [],
-      "one_liner": "practical-tutorials/project-based-learning：Curated list of project-based tutorials，本周 +789⭐",
-      "language": "Python",
-      "topics": [
-        "beginner-project",
-        "cpp",
-        "golang",
-        "javascript",
-        "project",
-        "python",
-        "tutorial",
-        "webdevelopment"
-      ]
-    },
-    {
-      "rank": 24,
-      "repo": "huggingface/transformers",
-      "stars": 166262,
-      "star_delta_1d": 4,
-      "star_delta_7d": 1209,
-      "score": 46.0,
-      "labels": [],
-      "one_liner": "huggingface/transformers：🤗 Transformers: the model-definition framework for state-of-the-art machine lear，本周 +1209⭐",
-      "language": "Python",
-      "topics": [
-        "audio",
-        "deep-learning",
-        "deepseek",
-        "gemma",
-        "glm",
-        "hacktoberfest",
-        "llm",
-        "machine-learning",
-        "model-hub",
-        "natural-language-processing",
-        "nlp",
-        "pretrained-models",
-        "python",
-        "pytorch",
-        "pytorch-transformers",
-        "qwen",
-        "speech-recognition",
-        "transformer",
-        "vlm"
-      ]
-    },
-    {
       "rank": 25,
-      "repo": "EbookFoundation/free-programming-books",
-      "stars": 397014,
-      "star_delta_1d": 43,
-      "star_delta_7d": 637,
-      "score": 45.8,
-      "labels": [],
-      "one_liner": "EbookFoundation/free-programming-books：:books: Freely available programming books，本周 +637⭐",
-      "language": "Python",
-      "topics": [
-        "books",
-        "education",
-        "hacktoberfest",
-        "list",
-        "resource"
-      ]
-    },
-    {
-      "rank": 26,
-      "repo": "react/react",
-      "stars": 250515,
-      "star_delta_1d": 10,
-      "star_delta_7d": 872,
-      "score": 45.5,
-      "labels": [],
-      "one_liner": "react/react：The library for web and native user interfaces.，本周 +872⭐",
-      "language": "JavaScript",
-      "topics": [
-        "declarative",
-        "frontend",
-        "javascript",
-        "library",
-        "react",
-        "ui"
-      ]
-    },
-    {
-      "rank": 27,
-      "repo": "sumimakito/Mac-Duo",
-      "stars": 952,
-      "star_delta_1d": 16,
-      "star_delta_7d": 560,
-      "score": 44.6,
-      "labels": [
-        "🌱新星"
-      ],
-      "one_liner": "sumimakito/Mac-Duo：Wish you could bring the iPhone Duo effect to your MacBook?，本周 +560⭐",
-      "language": "Swift",
-      "topics": [
-        "flip",
-        "iphone",
-        "iphoneduo",
-        "mac",
-        "macos",
-        "menubar",
-        "menubar-app",
-        "menubarapp"
-      ]
-    },
-    {
-      "rank": 28,
-      "repo": "avelino/awesome-go",
-      "stars": 184427,
-      "star_delta_1d": 34,
-      "star_delta_7d": 770,
-      "score": 44.4,
-      "labels": [],
-      "one_liner": "avelino/awesome-go：A curated list of awesome Go frameworks, libraries and software，本周 +770⭐",
-      "language": "Go",
-      "topics": [
-        "awesome",
-        "awesome-list",
-        "go",
-        "golang",
-        "golang-library",
-        "hacktoberfest"
-      ]
-    },
-    {
-      "rank": 29,
-      "repo": "tensorflow/tensorflow",
-      "stars": 200151,
-      "star_delta_1d": 8,
-      "star_delta_7d": 843,
-      "score": 43.9,
-      "labels": [],
-      "one_liner": "tensorflow/tensorflow：An Open Source Machine Learning Framework for Everyone，本周 +843⭐",
-      "language": "C++",
-      "topics": [
-        "deep-learning",
-        "deep-neural-networks",
-        "distributed",
-        "machine-learning",
-        "ml",
-        "neural-network",
-        "python",
-        "tensorflow"
-      ]
-    },
-    {
-      "rank": 30,
-      "repo": "anthropics/skills",
-      "stars": 176750,
-      "star_delta_1d": 49,
-      "star_delta_7d": 1293,
-      "score": 43.3,
-      "labels": [],
-      "one_liner": "anthropics/skills：Public repository for Agent Skills，本周 +1293⭐",
-      "language": "Python",
-      "topics": [
-        "agent-skills"
-      ]
-    },
-    {
-      "rank": 31,
-      "repo": "vuejs/vue",
-      "stars": 212814,
-      "star_delta_1d": 1,
-      "star_delta_7d": 789,
-      "score": 42.7,
-      "labels": [],
-      "one_liner": "vuejs/vue：This is the repo for Vue 2. For Vue 3, go to https://github.com/vuejs/core，本周 +789⭐",
-      "language": "TypeScript",
-      "topics": [
-        "framework",
-        "frontend",
-        "javascript",
-        "vue"
-      ]
-    },
-    {
-      "rank": 32,
       "repo": "unstablebuild/rune",
-      "stars": 755,
-      "star_delta_1d": 12,
-      "star_delta_7d": 468,
-      "score": 42.6,
+      "stars": 758,
+      "star_delta_1d": 3,
+      "star_delta_7d": 471,
+      "score": 41.4,
       "labels": [
         "🌱新星"
       ],
-      "one_liner": "unstablebuild/rune：the development environment for pros，本周 +468⭐",
+      "one_liner": "unstablebuild/rune：the development environment for pros，本周 +471⭐",
       "language": "Go",
       "topics": [
         "agent-orchestration",
@@ -724,14 +567,179 @@
       ]
     },
     {
-      "rank": 33,
-      "repo": "openclaw/openclaw",
-      "stars": 389917,
-      "star_delta_1d": 38,
-      "star_delta_7d": 593,
-      "score": 42.2,
+      "rank": 26,
+      "repo": "vinta/awesome-python",
+      "stars": 321157,
+      "star_delta_1d": 14,
+      "star_delta_7d": 1539,
+      "score": 41.4,
       "labels": [],
-      "one_liner": "openclaw/openclaw：The AI that really does things. Any OS. Any Platform. The lobster way. 🦞 ，本周 +593⭐",
+      "one_liner": "vinta/awesome-python：The definitive list that answers \"I want to do X in Python, which tool should I ，本周 +1539⭐",
+      "language": "Python",
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "python",
+        "python-frameworks",
+        "python-libraries",
+        "python-tools"
+      ]
+    },
+    {
+      "rank": 27,
+      "repo": "ollama/ollama",
+      "stars": 181209,
+      "star_delta_1d": 4,
+      "star_delta_7d": 668,
+      "score": 41.3,
+      "labels": [],
+      "one_liner": "ollama/ollama：Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and o，本周 +668⭐",
+      "language": "Go",
+      "topics": [
+        "deepseek",
+        "gemma",
+        "gemma3",
+        "glm",
+        "go",
+        "golang",
+        "gpt-oss",
+        "llama",
+        "llama3",
+        "llm",
+        "llms",
+        "minimax",
+        "mistral",
+        "ollama",
+        "qwen"
+      ]
+    },
+    {
+      "rank": 28,
+      "repo": "avelino/awesome-go",
+      "stars": 184430,
+      "star_delta_1d": 3,
+      "star_delta_7d": 769,
+      "score": 40.1,
+      "labels": [],
+      "one_liner": "avelino/awesome-go：A curated list of awesome Go frameworks, libraries and software，本周 +769⭐",
+      "language": "Go",
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "go",
+        "golang",
+        "golang-library",
+        "hacktoberfest"
+      ]
+    },
+    {
+      "rank": 29,
+      "repo": "EbookFoundation/free-programming-books",
+      "stars": 397014,
+      "star_delta_1d": 0,
+      "star_delta_7d": 635,
+      "score": 39.7,
+      "labels": [],
+      "one_liner": "EbookFoundation/free-programming-books：:books: Freely available programming books，本周 +635⭐",
+      "language": "Python",
+      "topics": [
+        "books",
+        "education",
+        "hacktoberfest",
+        "list",
+        "resource"
+      ]
+    },
+    {
+      "rank": 30,
+      "repo": "yifanzhang-pro/recurrent-looped-tranformer",
+      "stars": 863,
+      "star_delta_1d": 0,
+      "star_delta_7d": 530,
+      "score": 39.2,
+      "labels": [
+        "🌱新星"
+      ],
+      "one_liner": "yifanzhang-pro/recurrent-looped-tranformer：Official Project Page for Recurrent Looped Transformer (RLT)，本周 +530⭐",
+      "language": "HTML",
+      "topics": []
+    },
+    {
+      "rank": 31,
+      "repo": "kruzovic7/ai-data-extractor",
+      "stars": 827,
+      "star_delta_1d": 0,
+      "star_delta_7d": 532,
+      "score": 38.2,
+      "labels": [
+        "🌱新星"
+      ],
+      "one_liner": "kruzovic7/ai-data-extractor：Free open-source extractor for AI coding assistant chat histories. Supports Clau，本周 +532⭐",
+      "language": "Python",
+      "topics": [
+        "ai",
+        "ai-data-extraction",
+        "claude-code",
+        "cursor"
+      ]
+    },
+    {
+      "rank": 32,
+      "repo": "eternityspring/reelbench-skills",
+      "stars": 709,
+      "star_delta_1d": 0,
+      "star_delta_7d": 406,
+      "score": 38.0,
+      "labels": [
+        "🌱新星"
+      ],
+      "one_liner": "eternityspring/reelbench-skills：Learning notes and tooling skills for AI video - AI 视频相关的学习与工具 skill，本周 +406⭐",
+      "language": "HTML",
+      "topics": [
+        "ai-video",
+        "claude-skills",
+        "ffmpeg",
+        "shot-analysis",
+        "video-analysis"
+      ]
+    },
+    {
+      "rank": 33,
+      "repo": "nftechie/stonkfly",
+      "stars": 722,
+      "star_delta_1d": 0,
+      "star_delta_7d": 400,
+      "score": 37.9,
+      "labels": [
+        "🌱新星"
+      ],
+      "one_liner": "nftechie/stonkfly：A full retained fly-connectome simulation with experimental memory and guarded C，本周 +400⭐",
+      "language": "Python",
+      "topics": []
+    },
+    {
+      "rank": 34,
+      "repo": "nilbuild/page-mascot",
+      "stars": 648,
+      "star_delta_1d": 5,
+      "star_delta_7d": 338,
+      "score": 37.9,
+      "labels": [
+        "🌱新星"
+      ],
+      "one_liner": "nilbuild/page-mascot：A mascot that watches the cursor and blinks when you poke it，本周 +338⭐",
+      "language": "Python",
+      "topics": []
+    },
+    {
+      "rank": 35,
+      "repo": "openclaw/openclaw",
+      "stars": 389925,
+      "star_delta_1d": 8,
+      "star_delta_7d": 596,
+      "score": 37.9,
+      "labels": [],
+      "one_liner": "openclaw/openclaw：The AI that really does things. Any OS. Any Platform. The lobster way. 🦞 ，本周 +596⭐",
       "language": "TypeScript",
       "topics": [
         "ai",
@@ -744,12 +752,40 @@
       ]
     },
     {
-      "rank": 34,
+      "rank": 36,
+      "repo": "angusdevgo/IDM_Pro_Tool",
+      "stars": 723,
+      "star_delta_1d": 1,
+      "star_delta_7d": 379,
+      "score": 37.3,
+      "labels": [
+        "🌱新星"
+      ],
+      "one_liner": "angusdevgo/IDM_Pro_Tool：IDM激活与状态维护工具，本周 +379⭐",
+      "language": "C#",
+      "topics": []
+    },
+    {
+      "rank": 37,
+      "repo": "agentverse-os/AgentVerse-OS",
+      "stars": 694,
+      "star_delta_1d": 3,
+      "star_delta_7d": 371,
+      "score": 37.3,
+      "labels": [
+        "🌱新星"
+      ],
+      "one_liner": "agentverse-os/AgentVerse-OS：Personal cloud OS for a developer and their AI agents on a single server. One-co，本周 +371⭐",
+      "language": "Rust",
+      "topics": []
+    },
+    {
+      "rank": 38,
       "repo": "freeCodeCamp/freeCodeCamp",
-      "stars": 455636,
-      "star_delta_1d": 32,
+      "stars": 455637,
+      "star_delta_1d": 1,
       "star_delta_7d": 412,
-      "score": 41.7,
+      "score": 37.2,
       "labels": [],
       "one_liner": "freeCodeCamp/freeCodeCamp：freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming,，本周 +412⭐",
       "language": "TypeScript",
@@ -772,26 +808,52 @@
       ]
     },
     {
-      "rank": 35,
-      "repo": "multica-ai/andrej-karpathy-skills",
-      "stars": 213481,
-      "star_delta_1d": 61,
-      "star_delta_7d": 1571,
-      "score": 41.5,
+      "rank": 39,
+      "repo": "anthropics/skills",
+      "stars": 176756,
+      "star_delta_1d": 6,
+      "star_delta_7d": 1295,
+      "score": 37.2,
+      "labels": [],
+      "one_liner": "anthropics/skills：Public repository for Agent Skills，本周 +1295⭐",
+      "language": "Python",
+      "topics": [
+        "agent-skills"
+      ]
+    },
+    {
+      "rank": 40,
+      "repo": "yi1108/printfilm",
+      "stars": 546,
+      "star_delta_1d": 2,
+      "star_delta_7d": 297,
+      "score": 36.8,
       "labels": [
-        "🔥爆发中"
+        "🌱新星"
       ],
-      "one_liner": "multica-ai/andrej-karpathy-skills：A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Kar，本周 +1571⭐",
-      "language": "unknown",
+      "one_liner": "yi1108/printfilm：PRINTFILM：AI 科普视频与漫剧创作平台，本周 +297⭐",
+      "language": "Python",
       "topics": []
     },
     {
-      "rank": 36,
+      "rank": 41,
+      "repo": "mattpocock/skills",
+      "stars": 263768,
+      "star_delta_1d": 27,
+      "star_delta_7d": 5715,
+      "score": 36.7,
+      "labels": [],
+      "one_liner": "mattpocock/skills：Skills for Real Engineers. Straight from my .agents directory.，本周 +5715⭐",
+      "language": "Shell",
+      "topics": []
+    },
+    {
+      "rank": 42,
       "repo": "nilbuild/developer-roadmap",
-      "stars": 367463,
-      "star_delta_1d": 34,
+      "stars": 367466,
+      "star_delta_1d": 3,
       "star_delta_7d": 709,
-      "score": 40.9,
+      "score": 36.6,
       "labels": [],
       "one_liner": "nilbuild/developer-roadmap：Interactive roadmaps, guides and other educational content to help developers gr，本周 +709⭐",
       "language": "TypeScript",
@@ -817,14 +879,14 @@
       ]
     },
     {
-      "rank": 37,
+      "rank": 43,
       "repo": "massgravel/Microsoft-Activation-Scripts",
-      "stars": 190905,
-      "star_delta_1d": 32,
-      "star_delta_7d": 946,
-      "score": 40.4,
+      "stars": 190908,
+      "star_delta_1d": 3,
+      "star_delta_7d": 945,
+      "score": 36.3,
       "labels": [],
-      "one_liner": "massgravel/Microsoft-Activation-Scripts：Open-source Windows and Office activator featuring HWID, Ohook, TSforge, and Onl，本周 +946⭐",
+      "one_liner": "massgravel/Microsoft-Activation-Scripts：Open-source Windows and Office activator featuring HWID, Ohook, TSforge, and Onl，本周 +945⭐",
       "language": "Batchfile",
       "topics": [
         "activator",
@@ -846,182 +908,49 @@
       ]
     },
     {
-      "rank": 38,
-      "repo": "yifanzhang-pro/recurrent-looped-tranformer",
-      "stars": 863,
-      "star_delta_1d": 7,
-      "star_delta_7d": 530,
-      "score": 40.2,
+      "rank": 44,
+      "repo": "youngyangyang04/llm-master",
+      "stars": 642,
+      "star_delta_1d": 5,
+      "star_delta_7d": 247,
+      "score": 36.2,
       "labels": [
         "🌱新星"
       ],
-      "one_liner": "yifanzhang-pro/recurrent-looped-tranformer：Official Project Page for Recurrent Looped Transformer (RLT)，本周 +530⭐",
-      "language": "HTML",
-      "topics": []
-    },
-    {
-      "rank": 39,
-      "repo": "nilbuild/page-mascot",
-      "stars": 643,
-      "star_delta_1d": 21,
-      "star_delta_7d": 333,
-      "score": 40.2,
-      "labels": [
-        "🌱新星"
-      ],
-      "one_liner": "nilbuild/page-mascot：A mascot that watches the cursor and blinks when you poke it，本周 +333⭐",
-      "language": "Python",
-      "topics": []
-    },
-    {
-      "rank": 40,
-      "repo": "521xueweihan/HelloGitHub",
-      "stars": 176970,
-      "star_delta_1d": 53,
-      "star_delta_7d": 1235,
-      "score": 39.8,
-      "labels": [],
-      "one_liner": "521xueweihan/HelloGitHub：:octocat: 分享 GitHub 上有趣、入门级的开源项目。Share interesting, entry-level open source proj，本周 +1235⭐",
-      "language": "Python",
+      "one_liner": "youngyangyang04/llm-master：大模型（LLM）全栈学习路线与中文教程🔥：覆盖 Prompt Engineering、RAG、AI Agent、MCP、微调、模型部署、Transformer、，本周 +247⭐",
+      "language": "unknown",
       "topics": [
-        "awesome",
-        "github",
-        "hellogithub",
-        "python"
+        "agent",
+        "large-language-models",
+        "llm",
+        "llm-learning",
+        "llm-tutorial",
+        "rag"
       ]
     },
     {
-      "rank": 41,
-      "repo": "yi1108/printfilm",
-      "stars": 544,
-      "star_delta_1d": 21,
-      "star_delta_7d": 295,
-      "score": 39.6,
-      "labels": [
-        "🌱新星"
-      ],
-      "one_liner": "yi1108/printfilm：PRINTFILM：AI 科普视频与漫剧创作平台，本周 +295⭐",
-      "language": "Python",
-      "topics": []
-    },
-    {
-      "rank": 42,
-      "repo": "nftechie/stonkfly",
-      "stars": 722,
-      "star_delta_1d": 9,
-      "star_delta_7d": 400,
-      "score": 39.2,
-      "labels": [
-        "🌱新星"
-      ],
-      "one_liner": "nftechie/stonkfly：A full retained fly-connectome simulation with experimental memory and guarded C，本周 +400⭐",
-      "language": "Python",
-      "topics": []
-    },
-    {
-      "rank": 43,
-      "repo": "agentverse-os/AgentVerse-OS",
-      "stars": 691,
-      "star_delta_1d": 16,
-      "star_delta_7d": 368,
-      "score": 39.2,
-      "labels": [
-        "🌱新星"
-      ],
-      "one_liner": "agentverse-os/AgentVerse-OS：Personal cloud OS for a developer and their AI agents on a single server. One-co，本周 +368⭐",
-      "language": "Rust",
-      "topics": []
-    },
-    {
-      "rank": 44,
+      "rank": 45,
       "repo": "zjwzcx/Awesome-Astra-Embodied-AI",
-      "stars": 786,
-      "star_delta_1d": 26,
-      "star_delta_7d": 481,
-      "score": 39.0,
+      "stars": 790,
+      "star_delta_1d": 4,
+      "star_delta_7d": 485,
+      "score": 35.9,
       "labels": [
         "🌱新星"
       ],
-      "one_liner": "zjwzcx/Awesome-Astra-Embodied-AI：GPT-6 Astra for embodied AI and robotics.，本周 +481⭐",
+      "one_liner": "zjwzcx/Awesome-Astra-Embodied-AI：GPT-6 Astra for embodied AI and robotics.，本周 +485⭐",
       "language": "unknown",
       "topics": []
     },
     {
-      "rank": 45,
-      "repo": "kruzovic7/ai-data-extractor",
-      "stars": 827,
-      "star_delta_1d": 2,
-      "star_delta_7d": 532,
-      "score": 38.5,
-      "labels": [
-        "🌱新星"
-      ],
-      "one_liner": "kruzovic7/ai-data-extractor：Free open-source extractor for AI coding assistant chat histories. Supports Clau，本周 +532⭐",
-      "language": "Python",
-      "topics": [
-        "ai",
-        "ai-data-extraction",
-        "claude-code",
-        "cursor"
-      ]
-    },
-    {
       "rank": 46,
-      "repo": "eternityspring/reelbench-skills",
-      "stars": 709,
-      "star_delta_1d": 2,
-      "star_delta_7d": 406,
-      "score": 38.3,
-      "labels": [
-        "🌱新星"
-      ],
-      "one_liner": "eternityspring/reelbench-skills：Learning notes and tooling skills for AI video - AI 视频相关的学习与工具 skill，本周 +406⭐",
-      "language": "HTML",
-      "topics": [
-        "ai-video",
-        "claude-skills",
-        "ffmpeg",
-        "shot-analysis",
-        "video-analysis"
-      ]
-    },
-    {
-      "rank": 47,
-      "repo": "DigitalPlatDev/FreeDomain",
-      "stars": 199726,
-      "star_delta_1d": 28,
-      "star_delta_7d": 1312,
-      "score": 37.8,
-      "labels": [],
-      "one_liner": "DigitalPlatDev/FreeDomain：Free domain registration and practical DNS learning resources for everyone.，本周 +1312⭐",
-      "language": "Markdown",
-      "topics": [
-        "digitalplat",
-        "dns",
-        "dns-tutorial",
-        "documentation",
-        "domain",
-        "domain-platform",
-        "domain-registration",
-        "domainname",
-        "domains",
-        "education",
-        "free",
-        "free-domain",
-        "freedomain",
-        "internet-infrastructure",
-        "nameserver"
-      ]
-    },
-    {
-      "rank": 48,
       "repo": "f/prompts.chat",
-      "stars": 170502,
-      "star_delta_1d": 16,
-      "star_delta_7d": 681,
-      "score": 37.8,
+      "stars": 170504,
+      "star_delta_1d": 2,
+      "star_delta_7d": 678,
+      "score": 35.9,
       "labels": [],
-      "one_liner": "f/prompts.chat：f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the co，本周 +681⭐",
+      "one_liner": "f/prompts.chat：f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the co，本周 +678⭐",
       "language": "HTML",
       "topics": [
         "ai",
@@ -1045,14 +974,14 @@
       ]
     },
     {
-      "rank": 49,
+      "rank": 47,
       "repo": "jwasham/coding-interview-university",
-      "stars": 361076,
-      "star_delta_1d": 18,
-      "star_delta_7d": 417,
-      "score": 37.6,
+      "stars": 361081,
+      "star_delta_1d": 5,
+      "star_delta_7d": 416,
+      "score": 35.7,
       "labels": [],
-      "one_liner": "jwasham/coding-interview-university：A complete computer science study plan to become a software engineer.，本周 +417⭐",
+      "one_liner": "jwasham/coding-interview-university：A complete computer science study plan to become a software engineer.，本周 +416⭐",
       "language": "unknown",
       "topics": [
         "algorithm",
@@ -1070,33 +999,81 @@
       ]
     },
     {
-      "rank": 50,
-      "repo": "angusdevgo/IDM_Pro_Tool",
-      "stars": 722,
-      "star_delta_1d": 2,
-      "star_delta_7d": 378,
-      "score": 37.4,
+      "rank": 48,
+      "repo": "letorig/video-generator-client",
+      "stars": 521,
+      "star_delta_1d": 1,
+      "star_delta_7d": 255,
+      "score": 35.0,
       "labels": [
         "🌱新星"
       ],
-      "one_liner": "angusdevgo/IDM_Pro_Tool：IDM激活与状态维护工具，本周 +378⭐",
-      "language": "C#",
+      "one_liner": "letorig/video-generator-client：Async Python wrapper for Seedance, Kling, MiniMax and Wan video generation. Supp，本周 +255⭐",
+      "language": "Python",
+      "topics": [
+        "kling",
+        "kling-ai",
+        "minimax-h3",
+        "seedance",
+        "seedance-2-5",
+        "video-generation",
+        "video-generation-api",
+        "video-generation-tool"
+      ]
+    },
+    {
+      "rank": 49,
+      "repo": "multica-ai/andrej-karpathy-skills",
+      "stars": 213494,
+      "star_delta_1d": 13,
+      "star_delta_7d": 1569,
+      "score": 34.7,
+      "labels": [],
+      "one_liner": "multica-ai/andrej-karpathy-skills：A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Kar，本周 +1569⭐",
+      "language": "unknown",
       "topics": []
+    },
+    {
+      "rank": 50,
+      "repo": "DigitalPlatDev/FreeDomain",
+      "stars": 199731,
+      "star_delta_1d": 5,
+      "star_delta_7d": 1298,
+      "score": 34.7,
+      "labels": [],
+      "one_liner": "DigitalPlatDev/FreeDomain：Free domain registration and practical DNS learning resources for everyone.，本周 +1298⭐",
+      "language": "Markdown",
+      "topics": [
+        "digitalplat",
+        "dns",
+        "dns-tutorial",
+        "documentation",
+        "domain",
+        "domain-platform",
+        "domain-registration",
+        "domainname",
+        "domains",
+        "education",
+        "free",
+        "free-domain",
+        "freedomain",
+        "internet-infrastructure",
+        "nameserver"
+      ]
     }
   ],
   "details": [
     {
       "rank": 1,
       "repo": "deepseek-ai/deepseek-harness",
-      "stars": 226938,
-      "star_delta_1d": 371,
-      "star_delta_7d": 9202,
-      "score": 75.6,
+      "stars": 226988,
+      "star_delta_1d": 50,
+      "star_delta_7d": 9183,
+      "score": 68.6,
       "labels": [
-        "🔥爆发中",
         "🏢大厂背书"
       ],
-      "one_liner": "deepseek-ai/deepseek-harness：DeepSeek Harness: Everything is a Plugin.，本周 +9202⭐",
+      "one_liner": "deepseek-ai/deepseek-harness：DeepSeek Harness: Everything is a Plugin.，本周 +9183⭐",
       "language": "TypeScript",
       "topics": [
         "ai-agents",
@@ -1114,15 +1091,14 @@
     {
       "rank": 2,
       "repo": "microsoft/markitdown",
-      "stars": 184901,
-      "star_delta_1d": 118,
-      "star_delta_7d": 2665,
-      "score": 65.4,
+      "stars": 184915,
+      "star_delta_1d": 14,
+      "star_delta_7d": 2672,
+      "score": 53.4,
       "labels": [
-        "🔥爆发中",
         "🏢大厂背书"
       ],
-      "one_liner": "microsoft/markitdown：Python tool for converting files and office documents to Markdown.，本周 +2665⭐",
+      "one_liner": "microsoft/markitdown：Python tool for converting files and office documents to Markdown.，本周 +2672⭐",
       "language": "Python",
       "topics": [
         "autogen",
@@ -1142,15 +1118,87 @@
     },
     {
       "rank": 3,
-      "repo": "NousResearch/hermes-agent",
-      "stars": 246258,
-      "star_delta_1d": 96,
-      "star_delta_7d": 2339,
-      "score": 59.8,
-      "labels": [
-        "🔥爆发中"
+      "repo": "affaan-m/ECC",
+      "stars": 260515,
+      "star_delta_1d": 56,
+      "star_delta_7d": 5184,
+      "score": 51.6,
+      "labels": [],
+      "one_liner": "affaan-m/ECC：The agent harness performance optimization system. Skills, instincts, memory, se，本周 +5184⭐",
+      "language": "JavaScript",
+      "topics": [
+        "ai-agents",
+        "anthropic",
+        "claude",
+        "claude-code",
+        "developer-tools",
+        "llm",
+        "mcp",
+        "productivity"
       ],
-      "one_liner": "NousResearch/hermes-agent：The agent that grows with you，本周 +2339⭐",
+      "readme_summary": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "community": {
+        "contributors_30d": 100,
+        "open_issues": 219
+      },
+      "risk_note": ""
+    },
+    {
+      "rank": 4,
+      "repo": "microsoft/vscode",
+      "stars": 192603,
+      "star_delta_1d": 4,
+      "star_delta_7d": 1075,
+      "score": 51.1,
+      "labels": [
+        "🏢大厂背书"
+      ],
+      "one_liner": "microsoft/vscode：Visual Studio Code，本周 +1075⭐",
+      "language": "TypeScript",
+      "topics": [
+        "editor",
+        "electron",
+        "microsoft",
+        "typescript",
+        "visual-studio-code"
+      ],
+      "readme_summary": "Visual Studio Code",
+      "community": {
+        "contributors_30d": 100,
+        "open_issues": 21204
+      },
+      "risk_note": ""
+    },
+    {
+      "rank": 5,
+      "repo": "ai-sucks-butt/ai-sucks-butt",
+      "stars": 2049,
+      "star_delta_1d": 68,
+      "star_delta_7d": 1658,
+      "score": 50.6,
+      "labels": [
+        "🔥爆发中",
+        "🌱新星"
+      ],
+      "one_liner": "ai-sucks-butt/ai-sucks-butt：If you think AI sucks, star the repo.，本周 +1658⭐",
+      "language": "Python",
+      "topics": [],
+      "readme_summary": "If you think AI sucks, star the repo.",
+      "community": {
+        "contributors_30d": 1,
+        "open_issues": 0
+      },
+      "risk_note": ""
+    },
+    {
+      "rank": 6,
+      "repo": "NousResearch/hermes-agent",
+      "stars": 246273,
+      "star_delta_1d": 15,
+      "star_delta_7d": 2344,
+      "score": 48.4,
+      "labels": [],
+      "one_liner": "NousResearch/hermes-agent：The agent that grows with you，本周 +2344⭐",
       "language": "Python",
       "topics": [
         "ai",
@@ -1170,20 +1218,45 @@
       "readme_summary": "The agent that grows with you",
       "community": {
         "contributors_30d": 100,
-        "open_issues": 43627
+        "open_issues": 43638
       },
       "risk_note": ""
     },
     {
-      "rank": 4,
-      "repo": "firecrawl/firecrawl",
-      "stars": 181361,
-      "star_delta_1d": 97,
-      "star_delta_7d": 2893,
-      "score": 58.8,
-      "labels": [
-        "🔥爆发中"
+      "rank": 7,
+      "repo": "obra/superpowers",
+      "stars": 287724,
+      "star_delta_1d": 32,
+      "star_delta_7d": 3564,
+      "score": 47.7,
+      "labels": [],
+      "one_liner": "obra/superpowers：An agentic skills framework & software development methodology that works.，本周 +3564⭐",
+      "language": "Shell",
+      "topics": [
+        "ai",
+        "brainstorming",
+        "coding",
+        "obra",
+        "sdlc",
+        "skills",
+        "subagent-driven-development",
+        "superpowers"
       ],
+      "readme_summary": "An agentic skills framework & software development methodology that works.",
+      "community": {
+        "contributors_30d": 37,
+        "open_issues": 372
+      },
+      "risk_note": ""
+    },
+    {
+      "rank": 8,
+      "repo": "firecrawl/firecrawl",
+      "stars": 181379,
+      "star_delta_1d": 18,
+      "star_delta_7d": 2893,
+      "score": 47.7,
+      "labels": [],
       "one_liner": "firecrawl/firecrawl：The web data API to search, scrape, and interact at scale. 🔥，本周 +2893⭐",
       "language": "TypeScript",
       "topics": [
@@ -1215,159 +1288,45 @@
       "risk_note": ""
     },
     {
-      "rank": 5,
-      "repo": "affaan-m/ECC",
-      "stars": 260459,
-      "star_delta_1d": 332,
-      "star_delta_7d": 5160,
-      "score": 57.8,
-      "labels": [
-        "🔥爆发中"
-      ],
-      "one_liner": "affaan-m/ECC：The agent harness performance optimization system. Skills, instincts, memory, se，本周 +5160⭐",
-      "language": "JavaScript",
-      "topics": [
-        "ai-agents",
-        "anthropic",
-        "claude",
-        "claude-code",
-        "developer-tools",
-        "llm",
-        "mcp",
-        "productivity"
-      ],
-      "readme_summary": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
-      "community": {
-        "contributors_30d": 100,
-        "open_issues": 219
-      },
-      "risk_note": ""
-    },
-    {
-      "rank": 6,
-      "repo": "sindresorhus/awesome",
-      "stars": 506856,
-      "star_delta_1d": 123,
-      "star_delta_7d": 2263,
-      "score": 57.1,
-      "labels": [
-        "🔥爆发中"
-      ],
-      "one_liner": "sindresorhus/awesome：😎 Awesome lists about all kinds of interesting topics [NOTE: Pull requests are t，本周 +2263⭐",
-      "language": "unknown",
-      "topics": [
-        "awesome",
-        "awesome-list",
-        "lists",
-        "resources",
-        "unicorns"
-      ],
-      "readme_summary": "😎 Awesome lists about all kinds of interesting topics [NOTE: Pull requests are temporarily disabled until I have a chance to catch up with the existing ones]",
-      "community": {
-        "contributors_30d": 100,
-        "open_issues": 106
-      },
-      "risk_note": ""
-    },
-    {
-      "rank": 7,
-      "repo": "obra/superpowers",
-      "stars": 287692,
-      "star_delta_1d": 98,
-      "star_delta_7d": 3564,
-      "score": 56.9,
-      "labels": [
-        "🔥爆发中"
-      ],
-      "one_liner": "obra/superpowers：An agentic skills framework & software development methodology that works.，本周 +3564⭐",
-      "language": "Shell",
-      "topics": [
-        "ai",
-        "brainstorming",
-        "coding",
-        "obra",
-        "sdlc",
-        "skills",
-        "subagent-driven-development",
-        "superpowers"
-      ],
-      "readme_summary": "An agentic skills framework & software development methodology that works.",
-      "community": {
-        "contributors_30d": 37,
-        "open_issues": 371
-      },
-      "risk_note": ""
-    },
-    {
-      "rank": 8,
-      "repo": "public-apis/public-apis",
-      "stars": 480992,
-      "star_delta_1d": 85,
-      "star_delta_7d": 2787,
-      "score": 56.5,
-      "labels": [
-        "🔥爆发中"
-      ],
-      "one_liner": "public-apis/public-apis：A collective list of free APIs，本周 +2787⭐",
-      "language": "Python",
-      "topics": [
-        "api",
-        "apis",
-        "dataset",
-        "development",
-        "free",
-        "list",
-        "lists",
-        "open-source",
-        "public",
-        "public-api",
-        "public-apis",
-        "resources",
-        "software"
-      ],
-      "readme_summary": "A collective list of free APIs",
-      "community": {
-        "contributors_30d": 100,
-        "open_issues": 1953
-      },
-      "risk_note": ""
-    },
-    {
       "rank": 9,
-      "repo": "ai-sucks-butt/ai-sucks-butt",
-      "stars": 1981,
-      "star_delta_1d": 573,
-      "star_delta_7d": 1590,
-      "score": 56.3,
-      "labels": [
-        "🔥爆发中",
-        "🌱新星"
-      ],
-      "one_liner": "ai-sucks-butt/ai-sucks-butt：If you think AI sucks, star the repo.，本周 +1590⭐",
-      "language": "Python",
-      "topics": [],
-      "readme_summary": "If you think AI sucks, star the repo.",
-      "community": {
-        "contributors_30d": 1,
-        "open_issues": 0
-      },
-      "risk_note": ""
-    },
-    {
-      "rank": 10,
       "repo": "anomalyco/opencode",
-      "stars": 207962,
-      "star_delta_1d": 58,
-      "star_delta_7d": 1754,
-      "score": 54.0,
+      "stars": 207970,
+      "star_delta_1d": 8,
+      "star_delta_7d": 1752,
+      "score": 47.0,
       "labels": [],
-      "one_liner": "anomalyco/opencode：The open source coding agent.，本周 +1754⭐",
+      "one_liner": "anomalyco/opencode：The open source coding agent.，本周 +1752⭐",
       "language": "TypeScript",
       "topics": [],
       "readme_summary": "The open source coding agent.",
       "community": {
         "contributors_30d": 100,
-        "open_issues": 5804
+        "open_issues": 5806
+      },
+      "risk_note": ""
+    },
+    {
+      "rank": 10,
+      "repo": "Chuloo/mural",
+      "stars": 1271,
+      "star_delta_1d": 2,
+      "star_delta_7d": 963,
+      "score": 46.5,
+      "labels": [
+        "🌱新星"
+      ],
+      "one_liner": "Chuloo/mural：The language app you eventually delete. A native iPhone companion for learning t，本周 +963⭐",
+      "language": "Kotlin",
+      "topics": [
+        "ios",
+        "language-learning",
+        "open-source",
+        "swiftui"
+      ],
+      "readme_summary": "The language app you eventually delete. A native iPhone companion for learning through conversation.",
+      "community": {
+        "contributors_30d": 3,
+        "open_issues": 24
       },
       "risk_note": ""
     }
